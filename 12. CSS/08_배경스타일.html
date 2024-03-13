@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(250, 173, 236);
+        }
+        #div-bg {
+            width: 50%;
+            background: white;
+        }
+        .div-test {
+            background-color: white;
+
+            padding: 20px;
+            width: 20%;
+            border: 5px dashed black;
+            float: left;
+        }
+        #div1 {
+            background-clip: boarder-box;
+        }
+        #div2 {
+            background-clip: padding-box;
+        }
+        #div3 {
+            background-clip: content-box;
+        }
+        .clearfloat {
+            clear: both;
+        }
+
+        #bg-img {
+            width: 70%;
+            height: 1600px;
+            border: 4px solid red;
+
+            /* 기본적으로 배경에 비해 이미지가 적으면 반복(repeated)된다. */
+            background-image: url('sample/image/모르는사람.png');
+
+            background-repeat: no-repeat;
+
+            background-size: cover;
+
+            /* 이미지가 짤리지 않는(크롭되지 않는) 선에서 최선의 방법으로 표시 */
+            background-size: contain;
+
+            background-attachment: fixed;
+            background-attachment: scroll;
+
+            background-size: auto;
+
+            background-position: 50% 50%;
+
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>배경색과 배경 이미지</h1>
+    <h3>div 배경 테스트</h3>
+    <pre>div 영역을 설정하는 경우 배경색을 지정하기 위해서는 div에 배경 색을 별도로 지정해야 한다.</pre>
+    <div id="div-bg">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </div>
+
+    <h3>배경 적용 범위 조정(feat.엘리먼트의 구성 요소(padding, border, margin))</h3>
+    <pre>div 영역의 배경 적용 범위를 지정할 때 background-clip 속성을 사용한다.</pre>
+    <div id="div-test" id="div1">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </div>
+    <div id="div-test" id="div2">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </div>
+    <div id="div-test" id="div3">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </div>
+
+    <!-- float을 통해 블럭 요소(div 태그 같은)를 인라인 요소처럼 배치하였을 때 이후 다시 원상복귀를 위해서는 clear의 개념이 필요하다.
+        태그의 attribute로 적용(clear="both")할 수 있지만, css로 만들어 두고 class명을 통해 float을 clear하는 것을 권장한다.
+    -->
+    <!-- <br clear="both"> -->
+    <p class="clearfloat">ds</p>
+    <div id="div-test" id="div3">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </div>
+
+    <h3>배경 이미지 테스트</h3>
+    <pre>background-image 속성을 이용하요 배경 사진을 넣을 수 있다. 사진의 크기에 따라 이미지 사이즈를 고민해야 한다.</pre>
+    <div id="bg-img"></div>
+
+</body>
+</html>
